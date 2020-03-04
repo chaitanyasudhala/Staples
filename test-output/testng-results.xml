@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Staples_Retail_Store" duration-ms="28929" started-at="2020-03-04T17:55:27Z" finished-at="2020-03-04T17:55:56Z">
+    <groups>
+    </groups>
+    <test name="Retail Domain test" duration-ms="28929" started-at="2020-03-04T17:55:27Z" finished-at="2020-03-04T17:55:56Z">
+      <class name="com.staples.testCases.TC_LoginTestCase">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.staples.testCases.TC_LoginTestCase@4883b407]" name="setUp" is-config="true" duration-ms="24504" started-at="2020-03-04T17:55:27Z" finished-at="2020-03-04T17:55:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.staples.testCases.TC_LoginTestCase@4883b407]" name="loginTest" duration-ms="4393" started-at="2020-03-04T17:55:51Z" finished-at="2020-03-04T17:55:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+      </class> <!-- com.staples.testCases.TC_LoginTestCase -->
+    </test> <!-- Retail Domain test -->
+  </suite> <!-- Staples_Retail_Store -->
+</testng-results>
