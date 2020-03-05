@@ -3,6 +3,12 @@
 
 <suite name="Staples_Retail_Store">
 
+
+	<listeners>
+
+		<listener class-name="com.staples.utilities.ExtentReportsClass"/>
+
+	</listeners>
 	<test name="Retail Domain test">
 
 		<parameter name="browser" value="chrome" />

@@ -2,10 +2,9 @@
 
 <html>
   <head>
-  <meta charset='utf-8'>
   <title>TestNG reports</title>
 
-    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
     <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
@@ -24,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Staples_Retail_Store">
-              <span class="suite-name border-passed">Staples_Retail_Store</span>
+              <span class="suite-name border-failed">Staples_Retail_Store</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,7 +90,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Staples_Retail_Store" class="hide-methods failed suite-Staples_Retail_Store"> (hide)</a> <!-- hide-methods failed suite-Staples_Retail_Store -->
+                      <a href="#" panel-name="suite-Staples_Retail_Store" class="show-methods failed suite-Staples_Retail_Store"> (show)</a> <!-- show-methods failed suite-Staples_Retail_Store -->
+                    </span>
+                    <div class="method-list-content failed suite-Staples_Retail_Store">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Staples_Retail_Store" title="com.staples.testCases.TC_LoginTestCase" hash-for-method="loginPageValidation">loginPageValidation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Staples_Retail_Store -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -117,6 +130,25 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Staples_Retail_Store" class="panel Staples_Retail_Store">
+          <div class="suite-Staples_Retail_Store-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.staples.testCases.TC_LoginTestCase</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginPageValidation">
+                  </a> <!-- loginPageValidation -->
+                  <span class="method-name">loginPageValidation</span>
+                  <div class="stack-trace">java.lang.NullPointerException
+	at com.staples.testCases.TC_LoginTestCase.loginPageValidation(TC_LoginTestCase.java:33)
+... Removed 24 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Staples_Retail_Store-class-failed -->
           <div class="suite-Staples_Retail_Store-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -141,8 +173,11 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;Staples_Retail_Store&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Retail Domain test&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Staples_Retail_Store&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;com.staples.utilities.ExtentReportsClass&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test name=&quot;Retail Domain test&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.staples.testCases.TC_LoginTestCase&quot;/&gt;
@@ -185,11 +220,15 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'loginTest')
 data.setCell(0, 2, 'com.staples.testCases.TC_LoginTestCase')
-data.setCell(0, 3, 4393);
+data.setCell(0, 3, 4424);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'loginPageValidation')
+data.setCell(1, 2, 'com.staples.testCases.TC_LoginTestCase')
+data.setCell(1, 3, 16);
 window.suiteTableData['Staples_Retail_Store']= { tableData: data, tableDiv: 'times-div-Staples_Retail_Store'}
 return data;
 }
@@ -226,8 +265,14 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">loginPageValidation</span>
+                <span class="method-start">18140 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
                 <span class="method-name">loginTest</span>
-                <span class="method-start">24517 ms</span>
+                <span class="method-start">18194 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
