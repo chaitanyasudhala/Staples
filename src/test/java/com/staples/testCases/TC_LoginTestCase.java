@@ -1,5 +1,7 @@
 package com.staples.testCases;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -28,10 +30,12 @@ public class TC_LoginTestCase extends BaseClass {
 	}
 
 	@Test
-	public void loginPageValidation() {
+	public void loginPageValidation() throws IOException {
 
+		captureScreen(driver,"loginTest");
 		boolean flag = lp.validateAccountMenu();
 		Assert.assertTrue(flag);
+		
 	}
 
 	/*
